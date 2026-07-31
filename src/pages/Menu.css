@@ -1,0 +1,137 @@
+.menu-controls-section {
+  padding-bottom: 0;
+}
+
+.menu-search {
+  max-width: 520px;
+  margin: 0 auto 22px;
+}
+
+.menu-search input {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--ink-800);
+  color: var(--cream);
+  font-size: 0.95rem;
+}
+
+.menu-search input::placeholder {
+  color: var(--cream-dim);
+}
+
+.menu-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+}
+
+.menu-tab {
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--cream-faint);
+  font-size: 0.86rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.menu-tab:hover {
+  border-color: var(--amber);
+  color: var(--cream);
+}
+
+.menu-tab.is-active {
+  background: linear-gradient(145deg, var(--amber-bright), var(--amber));
+  color: #201304;
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.menu-empty {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.menu-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+}
+
+.menu-category {
+  padding: 26px;
+}
+
+.menu-category__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.menu-category__icon {
+  font-size: 1.4rem;
+}
+
+.menu-category__head h2 {
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+.menu-category__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  padding: 11px 4px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item__text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.menu-item__name {
+  font-weight: 600;
+  color: var(--cream);
+  font-size: 0.96rem;
+}
+
+.menu-item__desc {
+  font-size: 0.8rem;
+  color: var(--cream-dim);
+  font-style: italic;
+}
+
+.menu-item__price {
+  font-family: var(--font-mono);
+  color: var(--amber-bright);
+  font-weight: 700;
+  white-space: nowrap;
+  font-size: 0.92rem;
+}

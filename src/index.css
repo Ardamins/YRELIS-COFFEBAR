@@ -1,0 +1,273 @@
+/* ==========================================================================
+   YRELIS CoffeeBar — Design tokens
+   Paleta: espresso profundo + ámbar tostado + verde hierba (jugos/infusiones)
+   Tipografía: Fraunces (display) + Work Sans (texto) + Space Mono (precios)
+   Firma visual: el sello circular de la "tarjeta de sellos" del cafetín
+   ========================================================================== */
+
+:root {
+  --ink-950: #14100b;
+  --ink-900: #1c150d;
+  --ink-800: #271c10;
+  --ink-700: #3a2a17;
+  --surface: rgba(38, 27, 15, 0.72);
+  --surface-solid: #241a10;
+  --cream: #f6ecda;
+  --cream-dim: #cdb99c;
+  --cream-faint: rgba(246, 236, 218, 0.55);
+
+  --amber: #e3a13d;
+  --amber-bright: #f2bd63;
+  --amber-deep: #a86a26;
+
+  --herb: #8caf78;
+  --herb-deep: #5c7c4c;
+
+  --line: rgba(246, 236, 218, 0.14);
+  --line-strong: rgba(246, 236, 218, 0.28);
+
+  --shadow-soft: 0 18px 40px rgba(10, 6, 2, 0.45);
+  --shadow-tight: 0 8px 20px rgba(10, 6, 2, 0.35);
+
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Work Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+
+  --radius-lg: 26px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+
+  --container: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  background:
+    radial-gradient(1100px 620px at 12% -8%, rgba(227, 161, 61, 0.14), transparent 60%),
+    radial-gradient(900px 700px at 100% 0%, rgba(140, 175, 120, 0.10), transparent 55%),
+    var(--ink-950);
+  color: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  color: var(--cream);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+  line-height: 1.65;
+  color: var(--cream-faint);
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* -------- Page shell -------- */
+.page {
+  min-height: 100vh;
+  padding-top: 84px;
+}
+
+.page-hero {
+  position: relative;
+  padding: 76px 24px 56px;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(20, 14, 8, 0.35), rgba(20, 14, 8, 0.85)),
+    var(--bg-image, none);
+  background-size: cover;
+  background-position: center;
+}
+
+.page-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-bright);
+  margin-bottom: 18px;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-style: italic;
+}
+
+.page-hero p {
+  max-width: 560px;
+  margin: 16px auto 0;
+  font-size: 1.05rem;
+  color: var(--cream-faint);
+}
+
+/* -------- Section shells -------- */
+.section {
+  padding: 64px 0;
+}
+
+.section--tight {
+  padding: 40px 0;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 40px;
+}
+
+.section-head__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.section-head h2 {
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+}
+
+.section-head p {
+  margin-top: 12px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(6px);
+}
+
+/* -------- Buttons -------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: linear-gradient(145deg, var(--amber-bright), var(--amber-deep));
+  color: #201304;
+  box-shadow: 0 10px 26px rgba(227, 161, 61, 0.28);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(227, 161, 61, 0.36);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--line-strong);
+  color: var(--cream);
+}
+
+.btn-ghost:hover {
+  background: rgba(246, 236, 218, 0.06);
+  border-color: var(--amber);
+  transform: translateY(-2px);
+}
+
+.btn-herb {
+  background: linear-gradient(145deg, #9fc188, var(--herb-deep));
+  color: #10190b;
+  box-shadow: 0 10px 26px rgba(92, 124, 76, 0.3);
+}
+
+.btn-herb:hover {
+  transform: translateY(-3px);
+}
+
+/* -------- Focus visibility -------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--amber-bright);
+  outline-offset: 3px;
+}
+
+/* -------- Reveal on scroll -------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-hero {
+    padding: 58px 20px 44px;
+  }
+  .section {
+    padding: 48px 0;
+  }
+}

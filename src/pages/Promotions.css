@@ -1,0 +1,66 @@
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.promo-card {
+  position: relative;
+  padding: 34px 28px;
+  text-align: center;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(227, 161, 61, 0.3);
+  background: linear-gradient(165deg, rgba(227, 161, 61, 0.14), rgba(38, 27, 15, 0.6));
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-soft);
+}
+
+.promo-card__bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--amber), var(--amber-bright), var(--amber));
+}
+
+.promo-card h3 {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--amber-bright);
+}
+
+.promo-card__price {
+  font-family: var(--font-mono);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--amber-bright);
+  margin: 14px 0 8px;
+}
+
+.promo-card__schedule {
+  color: var(--cream);
+  margin-bottom: 12px;
+}
+
+.promo-card__detail {
+  font-size: 0.92rem;
+  font-style: italic;
+}
+
+.promo-note {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 26px;
+}
+
+.promo-note p {
+  font-size: 0.92rem;
+}
