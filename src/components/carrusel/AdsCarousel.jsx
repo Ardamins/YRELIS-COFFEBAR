@@ -32,17 +32,25 @@ export default function AdsCarousel({ slides }) {
                   preload="metadata"
                 />
               ) : (
-                <img src={slide.src} alt={slide.alt} />
+                <img src={slide.src} alt={slide.alt} loading="lazy" />
               )}
             </div>
           ))}
         </div>
 
         <div className="ads-carousel__controls">
-          <button type="button" onClick={() => go(index - 1)} aria-label="Anuncio anterior">
+          <button
+            type="button"
+            onClick={() => go(index - 1)}
+            aria-label="Anuncio anterior"
+          >
             ↑
           </button>
-          <button type="button" onClick={() => go(index + 1)} aria-label="Siguiente anuncio">
+          <button
+            type="button"
+            onClick={() => go(index + 1)}
+            aria-label="Siguiente anuncio"
+          >
             ↓
           </button>
         </div>
@@ -59,6 +67,7 @@ export default function AdsCarousel({ slides }) {
           ))}
         </div>
       </div>
+
       <p className="ads-carousel__caption">Novedades &amp; promos</p>
     </div>
   )

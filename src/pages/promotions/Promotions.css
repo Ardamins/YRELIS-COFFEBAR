@@ -1,3 +1,13 @@
+/* ==========================================================================
+   YRELIS CoffeeBar — Promotions
+   Mobile-first · Responsive · Optimizado
+   ========================================================================== */
+
+.promo-page {
+  padding-bottom: 40px;
+}
+
+/* -------- Grid de promociones -------- */
 .promo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -34,26 +44,34 @@
   font-style: italic;
   font-size: 1.3rem;
   color: var(--amber-bright);
+  margin: 0;
 }
 
 .promo-card__price {
   font-family: var(--font-mono);
-  font-size: 2.6rem;
+  font-size: clamp(2rem, 5vw, 2.6rem);
   font-weight: 700;
   color: var(--amber-bright);
   margin: 14px 0 8px;
+  line-height: 1;
 }
 
 .promo-card__schedule {
   color: var(--cream);
   margin-bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
 }
 
 .promo-card__detail {
   font-size: 0.92rem;
   font-style: italic;
+  line-height: 1.65;
+  margin: 0;
 }
 
+/* -------- Nota -------- */
 .promo-note {
   display: flex;
   align-items: center;
@@ -63,4 +81,44 @@
 
 .promo-note p {
   font-size: 0.92rem;
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 720px) {
+  .promo-card {
+    padding: 28px 22px;
+  }
+
+  .promo-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .promo-note {
+    flex-direction: column;
+    text-align: center;
+    padding: 22px 20px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .promo-grid {
+    gap: 16px;
+  }
+
+  .promo-card {
+    padding: 24px 18px;
+  }
+
+  .promo-card__detail {
+    font-size: 0.88rem;
+  }
+
+  .promo-note p {
+    font-size: 0.85rem;
+  }
 }

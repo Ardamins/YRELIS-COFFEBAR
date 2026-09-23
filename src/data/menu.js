@@ -1,12 +1,14 @@
-// Menú completo de YRELIS CoffeeBar, transcrito del sitio original.
+// Menú completo de YRELIS CoffeeBar.
+// El campo `icon` fue removido: los íconos se generan con CSS
+// usando el `id` de cada categoría como selector (data-icon).
+
 const menu = [
   {
     id: 'almuerzo',
     title: 'Almuerzo confortable',
-    icon: '🍽️',
     items: [
-      { name: 'Fetuccini a la Huancaina', desc: 'Con chuleta o pechuga de pollo', price: 22 },
-      { name: 'Fetuccini a la Huancaina', desc: 'Con lomo saltado, churrasco o bisteck', price: 28 },
+      { name: 'Fetuccini a la Huancaína', desc: 'Con chuleta o pechuga de pollo', price: 22 },
+      { name: 'Fetuccini a la Huancaína', desc: 'Con lomo saltado, churrasco o bisteck', price: 28 },
       { name: 'Fetuccini al Pesto', desc: 'Con chuleta o pechuga de pollo', price: 22 },
       { name: 'Fetuccini al Pesto', desc: 'Con lomo saltado, churrasco o bisteck', price: 20 },
       { name: 'Fetuccini a lo Alfredo', desc: 'Salsa bechamel, jamón, crema de leche, parmesano', price: 20 },
@@ -22,7 +24,6 @@ const menu = [
   {
     id: 'piqueo',
     title: 'Piqueo',
-    icon: '🍢',
     items: [
       { name: 'Tequeños de Queso', desc: 'Relleno con queso + salsa de guacamole', price: 18 },
       { name: 'Chicharrón de Pollo', desc: 'Marinado en salsa de casa + papas fritas y ensalada mixta', price: 22 },
@@ -33,7 +34,6 @@ const menu = [
   {
     id: 'desayunos',
     title: 'Desayunos',
-    icon: '🥞',
     items: [
       { name: 'Desayuno Americano', desc: 'Huevos revueltos, tostadas, café o jugo', price: 18 },
       { name: 'Desayuno Continental', desc: 'Tostadas, huevo, tocino y panqueque', price: 20 },
@@ -44,7 +44,6 @@ const menu = [
   {
     id: 'jugos',
     title: 'Jugos',
-    icon: '🧃',
     items: [
       { name: 'Papaya', desc: 'Refrescante jugo natural', price: 7 },
       { name: 'Piña', desc: 'Dulce y tropical', price: 7 },
@@ -59,7 +58,6 @@ const menu = [
   {
     id: 'antojitos',
     title: 'Antojitos',
-    icon: '🥪',
     items: [
       { name: 'Sandwich Mixto', desc: 'Pan de molde, jamón, queso edam', price: 10 },
       { name: 'Triples', desc: 'Clásico: pollo, durazno, palta', price: 10 },
@@ -73,7 +71,6 @@ const menu = [
   {
     id: 'dulces',
     title: 'Dulces',
-    icon: '🍰',
     items: [
       { name: 'Keke de Plátano', desc: 'Especialidad de la casa', price: 6 },
       { name: 'Keke de Naranja', desc: 'Húmedo y aromático', price: 6 },
@@ -83,7 +80,6 @@ const menu = [
   {
     id: 'infusiones',
     title: 'Infusiones calientes',
-    icon: '🍵',
     items: [
       { name: 'Manzanilla / Anís', desc: 'Relajante y digestiva', price: 3 },
       { name: 'Hierba Luisa', desc: 'Aromática y calmante', price: 3 },
@@ -95,7 +91,6 @@ const menu = [
   {
     id: 'cafes',
     title: 'Cafés',
-    icon: '☕',
     items: [
       { name: 'Espresso', desc: 'Intenso y aromático', price: 3 },
       { name: 'Americano', desc: 'Suave y equilibrado', price: 7 },
@@ -110,7 +105,6 @@ const menu = [
   {
     id: 'frappes',
     title: 'Frappés',
-    icon: '🥤',
     items: [
       { name: 'Mocka', desc: 'Delicioso y cremoso', price: 13 },
       { name: 'Algarrobina', desc: 'Energético y nutritivo', price: 13 },
@@ -122,7 +116,6 @@ const menu = [
   {
     id: 'refrescante',
     title: 'Refrescante',
-    icon: '🍋',
     items: [
       { name: 'Limonada Clásica', desc: 'Vaso', price: 8 },
       { name: 'Limonada Clásica', desc: 'Jarra', price: 15 },
@@ -143,7 +136,6 @@ const menu = [
   {
     id: 'ice-coffee',
     title: 'Ice Coffee',
-    icon: '🧊',
     items: [
       { name: 'Ice Caramel', desc: 'Dulce y refrescante', price: 14 },
       { name: 'Ice Mocka', desc: 'Chocolate y café helado', price: 14 },
@@ -157,7 +149,6 @@ const menu = [
   {
     id: 'cerveza',
     title: 'Cerveza y gaseosas',
-    icon: '🍺',
     items: [
       { name: 'Pilsen', desc: 'Cerveza nacional', price: 7 },
       { name: 'Corona', desc: 'Cerveza mexicana', price: 10 },
@@ -171,7 +162,6 @@ const menu = [
   {
     id: 'bebidas-hot',
     title: 'Bebidas hot',
-    icon: '🔥',
     items: [
       { name: 'Calientito #1', desc: 'Naranja + té negro', price: 17 },
       { name: 'Calientito #2', desc: 'Maracuyá y muña', price: 17 },
@@ -181,7 +171,6 @@ const menu = [
   {
     id: 'happy-hour',
     title: 'Happy Hour',
-    icon: '⏰',
     items: [
       { name: 'Lunes a Jueves', desc: 'Solo cócteles clásicos', price: 30 },
       { name: 'Viernes y Sábado', desc: 'Solo cócteles clásicos', price: 35 },
@@ -190,7 +179,6 @@ const menu = [
   {
     id: 'shots',
     title: 'Shots',
-    icon: '🥃',
     items: [
       { name: 'Tequila', desc: 'Shot tradicional', price: 15 },
       { name: 'Pisco', desc: 'Shot nacional', price: 15 },
@@ -199,7 +187,6 @@ const menu = [
   {
     id: 'cocteleria-clasica',
     title: 'Coctelería clásica',
-    icon: '🍹',
     items: [
       { name: 'Pisco Sour', desc: 'Maracuyá, fresa o clásico', price: 20 },
       { name: 'Mojitos', desc: 'Frutos rojos, maracuyá o clásico', price: 20 },
@@ -212,7 +199,6 @@ const menu = [
   {
     id: 'cocteleria-cafe',
     title: 'Coctelería café',
-    icon: '☕',
     items: [
       { name: 'Espresso Martini', desc: 'Energético y elegante', price: 22 },
       { name: 'Coffee Tonic', desc: 'Refrescante y único', price: 20 },
@@ -223,7 +209,6 @@ const menu = [
   {
     id: 'tendencia',
     title: 'Cócteles de tendencia',
-    icon: '⭐',
     items: [
       { name: 'Machu Picchu', desc: 'Inspirado en nuestra cultura', price: 28 },
       { name: 'Sacsayhuamán', desc: 'Fuerte y memorable', price: 28 },

@@ -1,0 +1,77 @@
+/* ==========================================================================
+   YRELIS CoffeeBar — Footer
+   Mobile-first · Responsive · Optimizado
+   ========================================================================== */
+
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 34px 0 42px;
+  text-align: center;
+  background: var(--ink-900);
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--cream);
+}
+
+.footer__addr {
+  font-size: 0.88rem;
+  color: var(--cream-faint);
+  margin: 0;
+}
+
+.footer__copy {
+  font-size: 0.8rem;
+  color: var(--cream-dim);
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 720px) {
+  .footer {
+    padding: 28px 0 36px;
+  }
+
+  .footer__brand {
+    font-size: 1rem;
+  }
+
+  .footer__addr {
+    font-size: 0.82rem;
+    max-width: 28ch;
+    line-height: 1.5;
+  }
+
+  .footer__copy {
+    font-size: 0.75rem;
+    max-width: 30ch;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer {
+    padding: 24px 0 32px;
+  }
+
+  .footer__addr,
+  .footer__copy {
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1b120a" />
+  <title>AdsCarousel | YRELIS CoffeeBar</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./AdsCarousel.css" />
+</head>
+<body>
+  <div class="ads-carousel">
+    <div class="ads-carousel__viewport">
+      <div class="ads-carousel__track">
+        <div class="ads-carousel__slide">
+          <img src="./promo-navidad.png" alt="Anuncio de temporada YRELIS" />
+        </div>
+        <div class="ads-carousel__slide">
+          <img src="./promo-especial.png" alt="Café especial de la casa" />
+        </div>
+        <div class="ads-carousel__slide">
+          <video src="./promo-video.mp4" controls playsinline preload="metadata"></video>
+        </div>
+      </div>
+
+      <div class="ads-carousel__controls">
+        <button type="button" aria-label="Anuncio anterior">↑</button>
+        <button type="button" aria-label="Siguiente anuncio">↓</button>
+      </div>
+
+      <div class="ads-carousel__dots">
+        <button type="button" class="ads-carousel__dot is-active" aria-label="Ir al anuncio 1"></button>
+        <button type="button" class="ads-carousel__dot" aria-label="Ir al anuncio 2"></button>
+        <button type="button" class="ads-carousel__dot" aria-label="Ir al anuncio 3"></button>
+      </div>
+    </div>
+
+    <p class="ads-carousel__caption">Novedades &amp; promos</p>
+  </div>
+</body>
+</html>

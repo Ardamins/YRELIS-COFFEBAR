@@ -1,4 +1,4 @@
-import Seal from './Seal.jsx'
+import Seal from '../seal/Seal.jsx'
 import './StampCard.css'
 
 const TOTAL = 7
@@ -17,8 +17,12 @@ export default function StampCard() {
 
       <div className="stamp-card__grid">
         {Array.from({ length: TOTAL }).map((_, i) => (
-          <div key={i} className={`stamp-card__stamp ${i < FILLED ? 'is-filled' : ''}`}>
-            {i < FILLED ? '✓' : i + 1}
+          <div
+            key={i}
+            className={`stamp-card__stamp ${i < FILLED ? 'is-filled' : ''}`}
+            aria-label={i < FILLED ? `Sello ${i + 1} completado` : `Sello ${i + 1}`}
+          >
+            {i < FILLED ? '' : i + 1}
           </div>
         ))}
       </div>

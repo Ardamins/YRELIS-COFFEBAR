@@ -1,13 +1,15 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
-import Navbar from './components/Navbar.jsx'
-import Footer from './components/Footer.jsx'
-import WhatsappButton from './components/WhatsappButton.jsx'
-import Home from './pages/Home.jsx'
-import Menu from './pages/Menu.jsx'
-import About from './pages/About.jsx'
-import Contact from './pages/Contact.jsx'
-import Promotions from './pages/Promotions.jsx'
+
+import Navbar from './components/navbar/Navbar.jsx'
+import Footer from './components/footer/Footer.jsx'
+import WhatsappButton from './components/whatsappButton/WhatsappButton.jsx'
+
+import Home from './pages/home/Home.jsx'
+import Menu from './pages/menu/Menu.jsx'
+import About from './pages/about/About.jsx'
+import Contact from './pages/contact/Contact.jsx'
+import Promotions from './pages/promotions/Promotions.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()

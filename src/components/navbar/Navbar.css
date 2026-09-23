@@ -1,0 +1,284 @@
+/* ==========================================================================
+   YRELIS CoffeeBar — Navbar
+   Menú hamburguesa universal (desktop + tablet + móvil)
+   ========================================================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(20, 14, 8, 0.55);
+  border-bottom: 1px solid transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar--scrolled {
+  background: rgba(18, 13, 7, 0.92);
+  border-bottom-color: var(--line);
+}
+
+.navbar__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 24px;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   BRAND
+   ========================================================================== */
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  z-index: 1100;
+}
+
+.navbar__logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--amber);
+  transition: transform 0.3s ease;
+}
+
+.navbar__brand:hover .navbar__logo {
+  transform: rotate(-6deg) scale(1.05);
+}
+
+.navbar__brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.navbar__brand-text strong {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+  color: var(--cream);
+}
+
+.navbar__brand-text em {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber-bright);
+}
+
+/* ==========================================================================
+   BOTÓN HAMBURGUESA (siempre visible)
+   ========================================================================== */
+
+.navbar__toggle {
+  display: block;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease;
+  z-index: 1100;
+}
+
+.navbar__toggle:hover {
+  border-color: var(--amber);
+  background: rgba(227, 161, 61, 0.06);
+}
+
+.navbar__toggle:focus-visible {
+  outline: 2px solid var(--amber-bright);
+  outline-offset: 3px;
+}
+
+.navbar__toggle span {
+  position: absolute;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  background: var(--cream);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease, opacity 0.25s ease, top 0.3s ease;
+}
+
+.navbar__toggle span:nth-child(1) {
+  top: 15px;
+}
+
+.navbar__toggle span:nth-child(2) {
+  top: 21px;
+}
+
+.navbar__toggle span:nth-child(3) {
+  top: 27px;
+}
+
+/* Estado abierto — cruz perfecta */
+.navbar__toggle.is-open {
+  border-color: var(--amber);
+  background: rgba(227, 161, 61, 0.08);
+}
+
+.navbar__toggle.is-open span:nth-child(1) {
+  top: 21px;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.navbar__toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__toggle.is-open span:nth-child(3) {
+  top: 21px;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+/* ==========================================================================
+   OVERLAY
+   ========================================================================== */
+
+.navbar__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 6, 2, 0.65);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1050;
+}
+
+.navbar__overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================================================================
+   DRAWER LATERAL (universal)
+   ========================================================================== */
+
+.navbar__drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(340px, 88vw);
+  background: linear-gradient(180deg, var(--ink-900) 0%, var(--ink-950) 100%);
+  border-left: 1px solid var(--line);
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.5);
+  padding: 100px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1080;
+  overflow-y: auto;
+}
+
+.navbar__drawer.is-open {
+  transform: translateX(0);
+}
+
+.navbar__drawer-title {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 14px;
+  padding-left: 6px;
+}
+
+.navbar__drawer .navbar__link {
+  display: block;
+  padding: 15px 18px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  border: 1px solid transparent;
+  color: var(--cream-faint);
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease,
+    color 0.25s ease, transform 0.25s ease;
+}
+
+.navbar__drawer .navbar__link:hover {
+  background: rgba(246, 236, 218, 0.05);
+  border-color: var(--line);
+  color: var(--cream);
+  transform: translateX(-4px);
+}
+
+.navbar__drawer .navbar__link.is-active {
+  color: #201304;
+  background: linear-gradient(145deg, var(--amber-bright), var(--amber));
+  border-color: transparent;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   RESPONSIVE (solo ajustes de tamaño, el drawer siempre funciona)
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .navbar__bar {
+    padding: 12px 16px;
+  }
+
+  .navbar__brand-text strong {
+    font-size: 1.05rem;
+  }
+
+  .navbar__brand-text em {
+    font-size: 0.58rem;
+  }
+
+  .navbar__logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .navbar__toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar__toggle span:nth-child(1) {
+    top: 13px;
+  }
+
+  .navbar__toggle span:nth-child(2) {
+    top: 19px;
+  }
+
+  .navbar__toggle span:nth-child(3) {
+    top: 25px;
+  }
+
+  .navbar__toggle.is-open span:nth-child(1),
+  .navbar__toggle.is-open span:nth-child(3) {
+    top: 19px;
+  }
+
+  .navbar__drawer {
+    padding: 90px 22px 28px;
+  }
+}

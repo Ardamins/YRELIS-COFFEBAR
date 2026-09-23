@@ -1,3 +1,8 @@
+/* ==========================================================================
+   YRELIS CoffeeBar — AdsCarousel
+   Mobile-first · Responsive · Optimizado
+   ========================================================================== */
+
 .ads-carousel {
   width: 280px;
   max-width: 100%;
@@ -19,6 +24,7 @@
   flex-direction: column;
   height: 100%;
   transition: transform 0.5s ease;
+  will-change: transform;
 }
 
 .ads-carousel__slide {
@@ -38,6 +44,7 @@
   object-fit: cover;
 }
 
+/* -------- Controles -------- */
 .ads-carousel__controls {
   position: absolute;
   top: 50%;
@@ -58,10 +65,12 @@
   border: none;
   background: rgba(20, 14, 8, 0.55);
   color: var(--cream);
+  font-size: 0.95rem;
   font-weight: 700;
+  line-height: 1;
   cursor: pointer;
   backdrop-filter: blur(4px);
-  transition: background 0.25s ease, transform 0.25s ease;
+  transition: background 0.25s ease, transform 0.25s ease, color 0.25s ease;
 }
 
 .ads-carousel__controls button:hover {
@@ -70,6 +79,12 @@
   transform: scale(1.08);
 }
 
+.ads-carousel__controls button:focus-visible {
+  outline: 2px solid var(--amber-bright);
+  outline-offset: 3px;
+}
+
+/* -------- Dots -------- */
 .ads-carousel__dots {
   position: absolute;
   bottom: 12px;
@@ -96,6 +111,7 @@
   transform: scale(1.3);
 }
 
+/* -------- Caption -------- */
 .ads-carousel__caption {
   margin-top: 12px;
   text-align: center;
@@ -106,13 +122,29 @@
   color: var(--cream-dim);
 }
 
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
 @media (max-width: 720px) {
   .ads-carousel {
     width: 100%;
     max-width: 320px;
     margin: 0 auto;
   }
+
   .ads-carousel__viewport {
     height: 420px;
+  }
+}
+
+@media (max-width: 420px) {
+  .ads-carousel__viewport {
+    height: 380px;
+  }
+
+  .ads-carousel__controls button {
+    width: 32px;
+    height: 32px;
   }
 }
